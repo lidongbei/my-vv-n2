@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY NOTICE.txt .
 
-ARG SING_BOX_VERSION=1.12.24
+ARG SING_BOX_VERSION=1.13.3
 RUN apk add --no-cache wget tar && \
     wget https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/sing-box-${SING_BOX_VERSION}-linux-amd64.tar.gz && \
     tar -zxvf sing-box-${SING_BOX_VERSION}-linux-amd64.tar.gz && \
