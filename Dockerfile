@@ -14,7 +14,7 @@ RUN wget https://github.com/SagerNet/sing-box/releases/download/v1.13.13/sing-bo
 COPY config.json .
 
 # 创建简单的健康响应文件
-RUN echo "OK" > /www/index.html
+RUN mkdir -p /www && echo "OK" > /www/index.html
 
 EXPOSE 8080
 
