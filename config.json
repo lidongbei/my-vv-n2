@@ -49,9 +49,9 @@
     {
       "type": "vless",
       "tag": "node-b-out",
-      "server": "对端IP",
+      "server": "myvv-8s31uk6k.b4a.run",
       "server_port": 8080,      
-      "uuid": "对端UUID",
+      "uuid": "3a36d77e-fe4d-45db-af05-b6f71760fc5a",
       "transport": {
         "type": "ws",
         "path": "/chat",
