@@ -23,12 +23,61 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       }
+    },
+    {
+      "type": "http",
+      "tag": "speedtest-in",
+      "listen": "0.0.0.0",
+      "listen_port": 8081,
+      "sniff": false
     }
   ],
   "outbounds": [
     {
       "type": "direct",
       "tag": "direct"
+    },
+    {
+      "type": "return",
+      "tag": "response-204",
+      "data": "SFRUUC8xLjEgMjA0IE5vIENvbnRlbnQNCg0K"
+    },
+    {
+      "type": "vless",
+      "tag": "node-a-out",
+      "server": "myvv-8s31uk6k.b4a.run",
+      "server_port": 8080,
+      "uuid": "3a36d77e-fe4d-45db-af05-b6f71760fc5a",
+      "transport": {
+        "type": "ws",
+        "path": "/chat",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "tls": {
+        "enabled": false
+      }
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "node-a-out"
+      ],
+      "url": "http://myvv-8s31uk6k.b4a.run/generate_204",
+      "interval": "5m",
+      "tolerance": 50,
+      "idle_timeout": "30m"
     }
-  ]
+  ],
+  "route": {
+    "rules": [
+      {
+        "inbound": ["speedtest-in"],
+        "path": ["/generate_204"],
+        "outbound": "response-204"
+      }
+    ],
+    "final": "direct"
+  }
 }
