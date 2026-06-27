@@ -5,5 +5,5 @@ if [ "$#" -gt 0 ]; then
   exec "$@"
 fi
 
-./curl-check-test.sh &
+./curl-check.sh &
 exec ./sing-box run -c config.json
