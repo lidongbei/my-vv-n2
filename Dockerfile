@@ -1,6 +1,6 @@
 FROM alpine:3.20
 
-RUN apk add --no-cache wget tar socat && \
+RUN apk add --no-cache wget tar && \
     addgroup -g 1000 -S appgroup && \
     adduser -u 1000 -S appuser -G appgroup
 
@@ -23,6 +23,6 @@ RUN chmod +x /entrypoint.sh
 
 USER appuser
 
-EXPOSE 8080 29467
+EXPOSE 8080
 
 ENTRYPOINT ["/entrypoint.sh"]

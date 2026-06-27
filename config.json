@@ -8,7 +8,7 @@
       "type": "vless",
       "tag": "vless-ws-in",
       "listen": "0.0.0.0",
-      "listen_port": 29467,
+      "listen_port": 8080,
       "sniff": true,
       "sniff_override_destination": true,
       "users": [
@@ -36,7 +36,7 @@
       "outbounds": [
         "direct"
       ],
-      "url": "http://myvv-8s31uk6k.b4a.run:8080/generate_204",
+      "url": "http://myvv-7vr9yd5y.b4a.run8080/generate_204",
       "interval": "5m",
       "tolerance": 50,
       "idle_timeout": "30m"
