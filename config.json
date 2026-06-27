@@ -29,17 +29,6 @@
     {
       "type": "direct",
       "tag": "direct"
-    },
-    {
-      "type": "urltest",
-      "tag": "auto",
-      "outbounds": [
-        "direct"
-      ],
-      "url": "https://myvv-skg4zkr5.b4a.run/chat",
-      "interval": "5m",
-      "tolerance": 50,
-      "idle_timeout": "30m"
     }
-  ] 
+  ]
 }
